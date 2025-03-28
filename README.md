@@ -26,5 +26,17 @@ Success Metrics: RMSE < $50,000, R² > 0.75
 
 ## 9. Model Deployment
 
+### Deploy Docker Image to Remote Server using Github Actions
+
+Create a personal access token: https://github.com/settings/tokens/new?scopes=write:packages,read:packages,delete:packages
+
+Add
+- SSH_PRIVATE_KEY
+- SSH_USER = user that should access the server
+- SSH_HOST = ip of server
+- WORK_DIR = path where docker compose file is stored e.g. ~/docker-image-github
+- PAT = Personal Access Token to access the container registry
+
+
 ## 10. Model Monitoring and Maintenance
 
