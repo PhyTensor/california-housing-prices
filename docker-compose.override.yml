@@ -1,0 +1,20 @@
+# version: '3.8'
+
+# Mounts local source code (volumes)
+# Enables FastAPI hot-reload
+# Auto-restarts frontend on code changes (if NiceGUI is restarted via command)
+
+services:
+  backend:
+    volumes:
+      - ./src/server:/app
+    command: >
+      uvicorn server:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+
+  frontend:
+    volumes:
+      - ./src/client:/app
+    command: python frontend.py
